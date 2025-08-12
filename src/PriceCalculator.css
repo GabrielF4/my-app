@@ -1,0 +1,86 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.priceCalcWrapper {
+    border: 1px rgb(167, 167, 167) solid;
+    border-radius: 1rem;
+}
+
+.section {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-bottom: 1px rgb(167, 167, 167) solid;
+}
+
+.sectionLabel {
+    color: white;
+}
+
+.btnSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.typeSelection,
+.clothingSelection,
+.ratingSelection {
+    margin-left: auto;
+    align-self: center;
+    padding-right: 1rem;
+}
+
+.btn {
+    margin: 0.25rem;
+    padding: 0 2rem;
+    height: 2rem;
+    border: none;
+    background: #333;
+    color: white;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.btn:hover {
+    background-color: rgb(158, 158, 158);
+}
+
+select {
+    margin: 0.25rem;
+    padding: 0 1rem;
+    height: 2rem;
+    border: none;
+    background: #333;
+    color: white;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.submitBtn {
+    margin: 1rem;
+    padding: 1rem;
+    height: 4rem;
+    border: none;
+    background-color: #336644;
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: bolder;
+}
+
+.submitBtn:hover {
+    background-color: hsl(140, 33%, 25%);
+}
+
+.priceDisplay {
+    margin: 1rem;
+    text-align: center;
+    font-weight: 800;
+}
+
+.rowFlex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

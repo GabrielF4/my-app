@@ -1,0 +1,45 @@
+html,
+body {
+    height: 100%;
+    background-color: #eee;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: white;
+    padding: 1rem;
+}
+
+main {
+    flex: 1;
+    margin: 1rem;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+    width: 200px;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    header img {
+        width: 160px;
+    }
+}
