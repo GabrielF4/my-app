@@ -1,5 +1,5 @@
 import "./PriceCalculator.css";
-import ratingPrices from "./data.js";
+import { ratingPrices, brands } from "./data.js";
 import { useState } from "react";
 
 function PriceCalculator() {
@@ -7,6 +7,7 @@ function PriceCalculator() {
     const [clothing, setClothing] = useState("");
     const [rating, setRating] = useState("");
     const [price, setPrice] = useState(0);
+    const [discount, setDiscount] = useState(0);
 
     const priceDisplay = document.querySelector(".priceDisplay");
 
@@ -95,6 +96,17 @@ function PriceCalculator() {
                             Exklusiv
                         </button>
                         <div className="ratingSelection">{rating}</div>
+                    </div>
+                    <div className="selectionSection rowFlex">
+                        <select
+                            value={discount}
+                            onChange={(e) => setDiscount(e.target.value)}
+                        >
+                            <option value="">--Avdrag--</option>
+                            <option value="Fläck">Fläck</option>
+                            <option value="Hål">Hål</option>
+                            <option value="Slitet">Slitet</option>
+                        </select>
                     </div>
                 </div>
 

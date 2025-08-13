@@ -1,0 +1,13 @@
+.appContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.brandSearchContainer {
+    width: 50vh;
+}
+
+.priceCalcContainer {
+    width: 50vh;
+}

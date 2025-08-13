@@ -17,6 +17,16 @@ body {
 header {
     background-color: white;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    width: 15vw;
+}
+
+.header-title {
+    text-align: center;
 }
 
 main {
