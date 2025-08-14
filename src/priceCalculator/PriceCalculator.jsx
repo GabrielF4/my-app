@@ -4,6 +4,43 @@ import "./PriceCalculator.css";
 import { data_barn, data_dam, data_herr, data_sport } from "./price_lists.js";
 import { useState } from "react";
 
+function getPriceList(categoryType) {
+    switch (categoryType) {
+        case "Herr":
+            return data_herr;
+        case "Dam":
+            return data_dam;
+        case "Barn":
+            return data_barn;
+        case "Sport":
+            return data_sport;
+        default:
+            return [];
+    }
+}
+
+function getPrice(priceList, clothing, priceLevel) {
+    const match = priceList.find((obj) => obj["type"] === clothing);
+    return match ? match[priceLevel] : undefined;
+}
+
+function ClothingList({ categoryType }) {
+    const priceList = getPriceList(categoryType);
+
+    return (
+        <>
+            <option key="-" value="-">
+                --{categoryType !== "" ? categoryType : "Välj Kategori"}--
+            </option>
+            {priceList.map((item, index) => (
+                <option key={index} value={item.type}>
+                    {item.type}
+                </option>
+            ))}
+        </>
+    );
+}
+
 function PriceCalculator() {
     const [categoryType, setCategoryType] = useState("");
     const [clothing, setClothing] = useState("");
@@ -15,7 +52,9 @@ function PriceCalculator() {
     //Event for when you click submit
     const handleSubmit = (e) => {
         e.preventDefault();
-        setPrice(130 - discount);
+        const priceList = getPriceList(categoryType);
+
+        setPrice(getPrice(priceList, clothing, priceLevel) - discount);
     };
 
     return (
@@ -29,10 +68,7 @@ function PriceCalculator() {
                             value={clothing}
                             onChange={(e) => setClothing(e.target.value)}
                         >
-                            <option value="">--Välj klädesplagg--</option>
-                            <option value="Byxor">Byxor</option>
-                            <option value="T-shirt">T-Shirt</option>
-                            <option value="Skjorta">Skjorta</option>
+                            <ClothingList categoryType={categoryType} />
                         </select>
                         <div className="selectionLabel">{clothing}</div>
                     </div>
@@ -53,7 +89,7 @@ function PriceCalculator() {
                             <option value="Hål">Hål</option>
                             <option value="Slitet">Slitet</option>
                         </select>
-                        <div className="selectionLabel">{discountReason}</div>
+                        <div className="selectionLabel">-{discount} kr</div>
                     </div>
                 </div>
                 <button type="submit" className="submitBtn">
