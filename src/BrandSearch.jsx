@@ -1,5 +1,5 @@
 import "./brandSearch.css";
-import { ratingPrices, brands } from "./data.js";
+import { brands } from "./data.js";
 import SearchExample from "./SearchField.jsx";
 
 function BrandSearch() {

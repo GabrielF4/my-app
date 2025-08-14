@@ -1,22 +1,22 @@
 import "./PriceCalculator.css";
-import { ratingPrices, brands } from "./data.js";
+import { data_barn, data_dam, data_herr, data_sport } from "./price_lists.js";
 import { useState } from "react";
 
 function PriceCalculator() {
-    const [type, setType] = useState("");
+    const [categoryType, setCategoryType] = useState("");
     const [clothing, setClothing] = useState("");
     const [rating, setRating] = useState("");
     const [price, setPrice] = useState(0);
+    const [discountReason, setDiscountReason] = useState("");
     const [discount, setDiscount] = useState(0);
-
-    const priceDisplay = document.querySelector(".priceDisplay");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(
-            `This will display price\nType: ${type}\nClothing: ${clothing}\nRating: ${rating}`
-        );
-        setPrice(ratingPrices[`${rating}`] ? ratingPrices[`${rating}`] : "??");
+        setPrice(130 - discount);
+    };
+
+    const categorySelect = (a) => {
+        setCategoryType(a);
     };
 
     return (
@@ -28,32 +28,32 @@ function PriceCalculator() {
                         <button
                             type="button"
                             className="btn"
-                            onClick={() => setType("Herr")}
+                            onClick={() => categorySelect("Herr")}
                         >
                             Herr
                         </button>
                         <button
                             type="button"
                             className="btn"
-                            onClick={() => setType("Dam")}
+                            onClick={() => categorySelect("Dam")}
                         >
                             Dam
                         </button>
                         <button
                             type="button"
                             className="btn"
-                            onClick={() => setType("Barn")}
+                            onClick={() => categorySelect("Barn")}
                         >
                             Barn
                         </button>
                         <button
                             type="button"
                             className="btn"
-                            onClick={() => setType("Sport")}
+                            onClick={() => categorySelect("Sport")}
                         >
                             Sport
                         </button>
-                        <div className="typeSelection">{type}</div>
+                        <div className="typeSelection">{categoryType}</div>
                     </div>
                 </div>
                 <div className="section">
@@ -106,8 +106,11 @@ function PriceCalculator() {
                     </div>
                     <div className="selectionSection rowFlex">
                         <select
-                            value={discount}
-                            onChange={(e) => setDiscount(e.target.value)}
+                            value={discountReason}
+                            onChange={(e) => {
+                                setDiscountReason(e.target.value);
+                                setDiscount(e.target.value === "" ? 0 : 10);
+                            }}
                         >
                             <option value="">--Avdrag--</option>
                             <option value="Fläck">Fläck</option>
