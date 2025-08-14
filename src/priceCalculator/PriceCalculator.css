@@ -24,9 +24,7 @@ form {
     flex-wrap: wrap;
 }
 
-.typeSelection,
-.clothingSelection,
-.ratingSelection {
+.selectionLabel {
     margin-left: auto;
     align-self: center;
     padding-right: 1rem;

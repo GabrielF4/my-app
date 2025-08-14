@@ -34,7 +34,7 @@ function PriceCalculator() {
                             <option value="T-shirt">T-Shirt</option>
                             <option value="Skjorta">Skjorta</option>
                         </select>
-                        <div className="clothingSelection">{clothing}</div>
+                        <div className="selectionLabel">{clothing}</div>
                     </div>
                 </div>
                 <PriceValueSection onPriceLevelChange={setpriceLevel} />
@@ -53,13 +53,14 @@ function PriceCalculator() {
                             <option value="Hål">Hål</option>
                             <option value="Slitet">Slitet</option>
                         </select>
+                        <div className="selectionLabel">{discountReason}</div>
                     </div>
                 </div>
                 <button type="submit" className="submitBtn">
                     Submit
                 </button>
             </form>
-            <div className="priceDisplay">{price} kr</div>
+            <div className="priceDisplay selectionLabel">{price} kr</div>
         </div>
     );
 }

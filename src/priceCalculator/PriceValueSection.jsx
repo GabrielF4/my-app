@@ -41,7 +41,7 @@ function PriceValueSection({ onPriceLevelChange }) {
                 >
                     Exklusiv
                 </button>
-                <div className="ratingSelection">{priceLevel}</div>
+                <div className="selectionLabel">{priceLevel}</div>
             </div>
         </div>
     );
