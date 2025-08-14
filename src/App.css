@@ -1,13 +1,27 @@
 .appContainer {
+    padding: 2rem;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
-.brandSearchContainer {
-    width: 50vh;
+nav {
+    display: flex;
+    height: 3rem;
+    background-color: #333;
+    color: white;
+    padding: 0;
+    width: 100%;
 }
 
-.priceCalcContainer {
-    width: 50vh;
+.tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab:hover {
+    background-color: #444;
+    cursor: pointer;
 }

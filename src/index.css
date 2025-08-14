@@ -25,30 +25,8 @@ header {
     width: 15vw;
 }
 
-nav {
-    display: flex;
-    height: 3rem;
-    background-color: #333;
-    color: white;
-    padding: 0;
-    width: 100%;
-}
-
-.tab {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.tab:hover {
-    background-color: #444;
-    cursor: pointer;
-}
-
 main {
     flex: 1;
-    margin: 1rem;
 }
 
 footer {
