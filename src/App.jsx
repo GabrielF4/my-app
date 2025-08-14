@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import PriceCalculator from "./PriceCalculator";
 import BrandSearch from "./BrandSearch";

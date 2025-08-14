@@ -46,6 +46,13 @@ function PriceCalculator() {
                         >
                             Barn
                         </button>
+                        <button
+                            type="button"
+                            className="btn"
+                            onClick={() => setType("Sport")}
+                        >
+                            Sport
+                        </button>
                         <div className="typeSelection">{type}</div>
                     </div>
                 </div>

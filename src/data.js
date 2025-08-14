@@ -1,10 +1,3 @@
-const ratingPrices = {
-    low: 1,
-    mid: 20,
-    high: 40,
-    lux: 100,
-};
-
 const brands = [
     { brand: "2 BIZ", priceLevel: "Medel" },
     { brand: "365 Sunshine", priceLevel: "Medel" },
@@ -452,4 +445,92 @@ const brands = [
     { brand: "Åhslind", priceLevel: "Medel" },
 ];
 
-export { ratingPrices, brands };
+const data_barn = [
+    { type: "T-shirt-lång ärm", low: 30, mid: 40, high: 50.0 },
+    { type: "T-shirt-kort ärm", low: 20, mid: 30, high: 40.0 },
+    { type: "Tjock tröja", low: 50, mid: 60, high: 70.0 },
+    { type: "Body", low: 30, mid: 40, high: 50.0 },
+    { type: "kjol/shorts", low: 30, mid: 40, high: 50.0 },
+    { type: "Klänning", low: 50, mid: 70, high: 90.0 },
+    { type: "Chinos", low: 40, mid: 50, high: 60.0 },
+    { type: "Jeans", low: 50, mid: 60, high: 70.0 },
+    { type: "Täckoverall", low: 80, mid: 100, high: 120.0 },
+    { type: "Täckjacka", low: 60, mid: 80, high: 100.0 },
+    { type: "Täckbyxor", low: 50, mid: 70, high: 90.0 },
+    { type: "Mössor/Vantar", low: 20, mid: 30, high: 40.0 },
+    { type: "Fleece/Del", low: 40, mid: 60, high: 80.0 },
+    { type: "Vinterskor/Stövlar", low: 60, mid: 60, high: 60.0 },
+    { type: "Gummistövlar", low: 40, mid: 40, high: nan },
+    { type: "Gymnastik/Lågskor", low: 40, mid: 40, high: 40.0 },
+    { type: "Tygskor/Sandaler", low: 30, mid: 30, high: 30.0 },
+];
+
+const data_dam = [
+    { type: "T-shirt-kort ärm", low: 40, mid: 60.0, high: 80.0 },
+    { type: "T-shirt-lång ärm", low: 50, mid: 70.0, high: 90.0 },
+    { type: "Tunn stickad Tröja", low: 70, mid: 90.0, high: 120.0 },
+    { type: "Tjock stickad tröja", low: 80, mid: 100.0, high: 160.0 },
+    { type: "Skjorta", low: 80, mid: 90.0, high: 100.0 },
+    { type: "Blus", low: 50, mid: 70.0, high: 90.0 },
+    { type: "Tunika", low: 70, mid: 90.0, high: 120.0 },
+    { type: "Kjol/Shorts", low: 50, mid: 70.0, high: 90.0 },
+    { type: "2-Delad dress", low: 100, mid: 120.0, high: 140.0 },
+    { type: "Baddräkt/Bikini", low: 50, mid: nan, high: nan },
+    { type: "Shorts", low: 50, mid: 70.0, high: 90.0 },
+    { type: "Klänning", low: 80, mid: 100.0, high: 150.0 },
+    { type: "Jeans", low: 80, mid: 100.0, high: 120.0 },
+    { type: "Byxa", low: 70, mid: 90.0, high: 110.0 },
+    { type: "Höst/Vår jacka", low: 120, mid: 180.0, high: 250.0 },
+    { type: "Skinnjacka", low: 150, mid: 250.0, high: 350.0 },
+    { type: "Täckjacka", low: 130, mid: 230.0, high: 330.0 },
+    { type: "Täckväst", low: 80, mid: 90.0, high: 150.0 },
+    { type: "Täckbyxa", low: 70, mid: 90.0, high: 120.0 },
+    { type: "Kappa", low: 100, mid: 150.0, high: 250.0 },
+    { type: "Vinterskor/Stövlar", low: 120, mid: 120.0, high: 120.0 },
+    { type: "Gummistövlar", low: 70, mid: 70.0, high: 70.0 },
+    { type: "Gymnastik/Lågskor", low: 70, mid: 70.0, high: 70.0 },
+    { type: "Tygskor/Sandaler", low: 50, mid: 50.0, high: 50.0 },
+];
+
+const data_herr = [
+    { type: "T-shirt", low: 30, mid: 40, high: 60 },
+    { type: "T-shirt-lång ärm", low: 50, mid: 70, high: 90 },
+    { type: "Piké", low: 40, mid: 50, high: 60 },
+    { type: "Tunn stickad Tröja", low: 70, mid: 90, high: 120 },
+    { type: "Tjock stickad tröja", low: 80, mid: 100, high: 160 },
+    { type: "Hoodie", low: 60, mid: 80, high: 100 },
+    { type: "Jeansskjorta", low: 80, mid: 120, high: 150 },
+    { type: "Skjorta", low: 80, mid: 90, high: 100 },
+    { type: "Hel kostym", low: 200, mid: 200, high: 200 },
+    { type: "Kavaj", low: 130, mid: 130, high: 130 },
+    { type: "Kostymbyxa", low: 70, mid: 70, high: 70 },
+    { type: "Kostymväst", low: 50, mid: 50, high: 50 },
+    { type: "Chinos", low: 60, mid: 80, high: 100 },
+    { type: "Shorts", low: 50, mid: 70, high: 90 },
+    { type: "Badbyxor", low: 50, mid: 50, high: 50 },
+    { type: "Jeans", low: 80, mid: 100, high: 160 },
+    { type: "Höst/Vår jacka", low: 120, mid: 180, high: 250 },
+    { type: "Skinnjacka", low: 150, mid: 250, high: 350 },
+    { type: "Täckjacka", low: 130, mid: 230, high: 330 },
+    { type: "Täckväst", low: 80, mid: 90, high: 150 },
+    { type: "Täckbyxa", low: 70, mid: 90, high: 120 },
+    { type: "Överrock", low: 100, mid: 150, high: 250 },
+    { type: "Jeansjacka", low: 90, mid: 150, high: 250 },
+    { type: "Vinterskor/Stövlar", low: 120, mid: 120, high: 120 },
+    { type: "Gummistövlar", low: 70, mid: 70, high: 70 },
+    { type: "Gymnastik/Lågskor", low: 70, mid: 70, high: 70 },
+    { type: "Tygskor/Sandaler", low: 50, mid: 50, high: 50 },
+];
+
+const data_sport = [
+    { type: "Zipjacka", low: 60, mid: 80, high: 100 },
+    { type: "Tröja-lång ärm", low: 50, mid: 70, high: 90 },
+    { type: "Tröja-Kort ärm", low: 40, mid: 60, high: 80 },
+    { type: "Korta tights", low: 50, mid: 70, high: 90 },
+    { type: "Tights", low: 60, mid: 80, high: 100 },
+    { type: "Överdragsbyxor", low: 60, mid: 80, high: 100 },
+    { type: "Mjukbyxor", low: 50, mid: 70, high: 90 },
+    { type: "Skaljackor", low: 100, mid: 140, high: 200 },
+];
+
+export { brands, data_barn, data_dam, data_herr, data_sport };
