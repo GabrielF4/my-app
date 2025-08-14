@@ -1,3 +1,5 @@
+import CategorySelecttion from "./CategorySelection.jsx";
+import PriceValueSection from "./PriceValueSection.jsx";
 import "./PriceCalculator.css";
 import { data_barn, data_dam, data_herr, data_sport } from "./price_lists.js";
 import { useState } from "react";
@@ -5,58 +7,22 @@ import { useState } from "react";
 function PriceCalculator() {
     const [categoryType, setCategoryType] = useState("");
     const [clothing, setClothing] = useState("");
-    const [rating, setRating] = useState("");
+    const [priceLevel, setpriceLevel] = useState("");
     const [price, setPrice] = useState(0);
     const [discountReason, setDiscountReason] = useState("");
     const [discount, setDiscount] = useState(0);
 
+    //Event for when you click submit
     const handleSubmit = (e) => {
         e.preventDefault();
         setPrice(130 - discount);
     };
 
-    const categorySelect = (a) => {
-        setCategoryType(a);
-    };
-
     return (
         <div className="priceCalcWrapper">
             <form onSubmit={handleSubmit}>
-                <div className="section">
-                    <div className="sectiondiv">Typ:</div>
-                    <div className="btnSection">
-                        <button
-                            type="button"
-                            className="btn"
-                            onClick={() => categorySelect("Herr")}
-                        >
-                            Herr
-                        </button>
-                        <button
-                            type="button"
-                            className="btn"
-                            onClick={() => categorySelect("Dam")}
-                        >
-                            Dam
-                        </button>
-                        <button
-                            type="button"
-                            className="btn"
-                            onClick={() => categorySelect("Barn")}
-                        >
-                            Barn
-                        </button>
-                        <button
-                            type="button"
-                            className="btn"
-                            onClick={() => categorySelect("Sport")}
-                        >
-                            Sport
-                        </button>
-                        <div className="typeSelection">{categoryType}</div>
-                    </div>
-                </div>
-                <div className="section">
+                <CategorySelecttion onCategoryChange={setCategoryType} />
+                <div className="section clothingSection">
                     <div className="sectiondiv">Klädesplagg: </div>
                     <div className="selectionSection rowFlex">
                         <select
@@ -71,39 +37,9 @@ function PriceCalculator() {
                         <div className="clothingSelection">{clothing}</div>
                     </div>
                 </div>
+                <PriceValueSection onPriceLevelChange={setpriceLevel} />
                 <div className="section">
-                    <div className="sectiondiv">Värde: </div>
-                    <div className="btnSection">
-                        <button
-                            type="button"
-                            className="btn"
-                            onClick={() => setRating("low")}
-                        >
-                            Låg
-                        </button>
-                        <button
-                            type="button"
-                            className="btn"
-                            onClick={() => setRating("mid")}
-                        >
-                            Meddel
-                        </button>
-                        <button
-                            type="button"
-                            className="btn"
-                            onClick={() => setRating("high")}
-                        >
-                            Hög
-                        </button>
-                        <button
-                            type="button"
-                            className="btn"
-                            onClick={() => setRating("lux")}
-                        >
-                            Exklusiv
-                        </button>
-                        <div className="ratingSelection">{rating}</div>
-                    </div>
+                    <div className="sectiondiv">Avdrag: </div>
                     <div className="selectionSection rowFlex">
                         <select
                             value={discountReason}
@@ -119,7 +55,6 @@ function PriceCalculator() {
                         </select>
                     </div>
                 </div>
-
                 <button type="submit" className="submitBtn">
                     Submit
                 </button>
