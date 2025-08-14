@@ -1,6 +1,6 @@
 import "./App.css";
-import PriceCalculator from "./PriceCalculator";
-import BrandSearch from "./BrandSearch";
+import PriceCalculator from "./priceCalculator/PriceCalculator";
+import BrandSearch from "./brandSearch/BrandSearch";
 
 function App() {
     return (
