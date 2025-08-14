@@ -25,3 +25,7 @@ nav {
     background-color: #444;
     cursor: pointer;
 }
+
+.tab:active {
+    background-color: #444;
+}

@@ -23,7 +23,7 @@ function PriceCalculator() {
             <form onSubmit={handleSubmit}>
                 <CategorySelecttion onCategoryChange={setCategoryType} />
                 <div className="section clothingSection">
-                    <div className="sectiondiv">Klädesplagg: </div>
+                    <div className="sectionLabel">Klädesplagg: </div>
                     <div className="selectionSection rowFlex">
                         <select
                             value={clothing}
@@ -39,7 +39,7 @@ function PriceCalculator() {
                 </div>
                 <PriceValueSection onPriceLevelChange={setpriceLevel} />
                 <div className="section">
-                    <div className="sectiondiv">Avdrag: </div>
+                    <div className="sectionLabel">Avdrag: </div>
                     <div className="selectionSection rowFlex">
                         <select
                             value={discountReason}

@@ -12,7 +12,7 @@ function CategorySelecttion({ onCategoryChange }) {
 
     return (
         <div className="section">
-            <div className="sectiondiv">Kategori:</div>
+            <div className="sectionLabel">Kategori:</div>
             <div className="btnSection">
                 <button
                     type="button"

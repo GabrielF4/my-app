@@ -11,7 +11,7 @@ function PriceValueSection({ onPriceLevelChange }) {
 
     return (
         <div className="section">
-            <div className="sectiondiv">Värde: </div>
+            <div className="sectionLabel">Värde: </div>
             <div className="btnSection">
                 <button
                     type="button"
