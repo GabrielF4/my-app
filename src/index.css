@@ -21,8 +21,11 @@ header {
 }
 
 .logo {
+    max-width: 100%;
     margin: 0 1rem;
-    width: 15vw;
+    width: 12rem;
+    height: auto;
+    display: block;
 }
 
 main {
@@ -34,17 +37,4 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-}
-
-header img {
-    max-width: 100%;
-    height: auto;
-    width: 200px;
-    display: block;
-}
-
-@media (max-width: 600px) {
-    header img {
-        width: 160px;
-    }
 }

@@ -4,6 +4,7 @@ form {
 }
 
 .priceCalcWrapper {
+    width: 90vw;
     border: 1px rgb(167, 167, 167) solid;
     border-radius: 1rem;
 }
