@@ -11,6 +11,19 @@ const SearchField = () => {
         item.brand.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    function searchTradera() {
+        window.open(
+            `https://www.tradera.com/search?q=${encodeURIComponent(
+                searchTerm
+            )}&categoryId=16`,
+            "_blank"
+        );
+    }
+
+    function addBrandToDB() {
+        console.log(searchTerm);
+    }
+
     return (
         <div className="container">
             <input
@@ -21,6 +34,13 @@ const SearchField = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={{}}
             />
+            <button className="traderaBtn btn" onClick={searchTradera}>
+                Sök <span className="tradera">Tradera</span>
+            </button>
+
+            <button className="addBrandBtn btn" onClick={addBrandToDB}>
+                Lägg till märke
+            </button>
 
             <ul>
                 {filteredData.length > 0 ? (

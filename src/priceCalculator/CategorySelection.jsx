@@ -42,7 +42,7 @@ function CategorySelecttion({ onCategoryChange }) {
                 >
                     Sport
                 </button>
-                <div className="selectionLabel">{categoryType}</div>
+                <div className="btnSelectionLabel">{categoryType}</div>
             </div>
         </div>
     );
