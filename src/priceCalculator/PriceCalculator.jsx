@@ -48,13 +48,24 @@ function PriceCalculator() {
     const [price, setPrice] = useState(0);
     const [discountReason, setDiscountReason] = useState("");
     const [discount, setDiscount] = useState(0);
+    const [addCost, setAddCost] = useState("");
 
     //Event for when you click submit
     const handleSubmit = (e) => {
         e.preventDefault();
         const priceList = getPriceList(categoryType);
 
-        setPrice(getPrice(priceList, clothing, priceLevel) - discount);
+        let updatedPriceLevel = "";
+
+        if (priceLevel === "lux") {
+            updatedPriceLevel = "high";
+            setAddCost(" (+ 20-80)");
+        } else {
+            updatedPriceLevel = priceLevel;
+            setAddCost("");
+        }
+
+        setPrice(getPrice(priceList, clothing, updatedPriceLevel) - discount);
     };
 
     return (
@@ -96,7 +107,10 @@ function PriceCalculator() {
                     Submit
                 </button>
             </form>
-            <div className="priceDisplay selectionLabel">{price} kr</div>
+            <div className="priceDisplay selectionLabel">
+                {price}
+                <span className="luxText">{addCost}</span> kr
+            </div>
         </div>
     );
 }

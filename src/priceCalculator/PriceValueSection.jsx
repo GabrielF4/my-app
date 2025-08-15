@@ -36,7 +36,7 @@ function PriceValueSection({ onPriceLevelChange }) {
                 </button>
                 <button
                     type="button"
-                    className="btn"
+                    className="btn luxBtn"
                     onClick={() => priceLevelSelect("lux")}
                 >
                     Exklusiv
