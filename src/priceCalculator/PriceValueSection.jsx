@@ -25,7 +25,7 @@ function PriceValueSection({ onPriceLevelChange }) {
                     className="btn"
                     onClick={() => priceLevelSelect("mid")}
                 >
-                    Meddel
+                    Medel
                 </button>
                 <button
                     type="button"

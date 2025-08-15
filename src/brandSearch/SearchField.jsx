@@ -15,8 +15,9 @@ const SearchField = () => {
         window.open(
             `https://www.google.com/search?tbm=shop&q=${encodeURIComponent(
                 searchTerm
-            )}`,
-            "_blank"
+            )}+clothes`,
+            "_blank",
+            "noopener,noreferrer"
         );
     }
 
