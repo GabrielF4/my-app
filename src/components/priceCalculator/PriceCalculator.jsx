@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./PriceCalculator.css";
 import CategorySelecttion from "./priceCalcSections/CategorySelection.jsx";
 import PriceValueSection from "./priceCalcSections/PriceValueSection.jsx";
@@ -56,8 +56,6 @@ function PriceCalculator() {
     const [clothing, setClothing] = useState("");
     const [priceLevel, setpriceLevel] = useState("");
     const [price, setPrice] = useState(0);
-    const [discountReason, setDiscountReason] = useState("");
-    const [discount, setDiscount] = useState(0);
     const [addCost, setAddCost] = useState("");
 
     //Event for when you click submit
@@ -103,29 +101,6 @@ function PriceCalculator() {
                     setPriceLevel={setpriceLevel}
                     priceLevel={priceLevel}
                 />
-                <div className="section">
-                    <div className="sectionLabel">
-                        Avdrag:{" "}
-                        <span className="selectionLabel">
-                            {discount ? `- ${discount} kr` : ""}
-                        </span>
-                    </div>
-                    <div className="selectionSection rowFlex">
-                        <select
-                            value={discountReason}
-                            onChange={(e) => {
-                                setDiscountReason(e.target.value);
-                                setDiscount(e.target.value === "" ? 0 : 10);
-                            }}
-                        >
-                            <option value="">--Avdrag--</option>
-                            <option value="Fläck">Fläck</option>
-                            <option value="Hål">Hål</option>
-                            <option value="Slitet">Slitet</option>
-                        </select>
-                        <div className="selectionLabel">-{discount} kr</div>
-                    </div>
-                </div>
                 <button type="submit" className="submitBtn">
                     Submit
                 </button>
