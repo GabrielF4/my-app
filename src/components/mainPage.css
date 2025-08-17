@@ -1,0 +1,31 @@
+.appContainer {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    height: 3rem;
+    background-color: #333;
+    color: white;
+    padding: 0;
+    width: 100%;
+}
+
+.tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab:hover {
+    background-color: #444;
+    cursor: pointer;
+}
+
+.tab:active {
+    background-color: #444;
+}
