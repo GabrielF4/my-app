@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import PriceCalculator from "./priceCalculator/PriceCalculator";
 import BrandSearch from "./brandSearch/BrandSearch";
 import logo from "../assets/logo.png";
 
 function App() {
-    const [activeTab, setActiveTab] = useState("brandSearch");
+    //State for active tab
+    const [activeTab, setActiveTab] = useState(() => {
+        return localStorage.getItem("activeTab") || "brandSearch";
+    });
 
+    //Get active tab from local storage on load
+    useEffect(() => {
+        localStorage.setItem("activeTab", activeTab);
+    }, [activeTab]);
+
+    //Render content based on the activeTab state
     const renderTabContent = () => {
         switch (activeTab) {
             case "brandSearch":
