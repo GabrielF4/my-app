@@ -29,17 +29,24 @@ function MainPage() {
     return (
         <>
             <nav className="nav-bar">
+                {/*Brand-search tab*/}
                 <div
                     className="tab"
                     onClick={() => setActiveTab("brandSearch")}
                 >
                     Märkessökning
                 </div>
+                {/*Price-calculation tab*/}
                 <div className="tab" onClick={() => setActiveTab("priceCalc")}>
                     Prissättning
                 </div>
             </nav>
-            <div className="appContainer">{renderTabContent()}</div>
+            <div className="appContainer">
+                {
+                    //Depending on which tab is clicked the matching component is loaded
+                    renderTabContent()
+                }
+            </div>
         </>
     );
 }

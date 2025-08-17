@@ -1,14 +1,15 @@
-import CategorySelecttion from "./CategorySelection.jsx";
-import PriceValueSection from "./PriceValueSection.jsx";
+import { useState } from "react";
 import "./PriceCalculator.css";
+import CategorySelecttion from "./priceCalcSections/CategorySelection.jsx";
+import PriceValueSection from "./priceCalcSections/PriceValueSection.jsx";
 import {
     data_barn,
     data_dam,
     data_herr,
     data_sport,
 } from "../../utils/price_lists.js";
-import { useState } from "react";
 
+//Returns the price list from price_lists.js matching the right category type
 function getPriceList(categoryType) {
     switch (categoryType) {
         case "Herr":
@@ -24,11 +25,13 @@ function getPriceList(categoryType) {
     }
 }
 
+//Returns price as a number based on the user input and the matching price list
 function getPrice(priceList, clothing, priceLevel) {
     const match = priceList.find((obj) => obj["type"] === clothing);
     return match ? match[priceLevel] : undefined;
 }
 
+//Returns a full list of clothing types based on what category the user clicked on
 function ClothingList({ categoryType }) {
     const priceList = getPriceList(categoryType);
 
@@ -46,7 +49,9 @@ function ClothingList({ categoryType }) {
     );
 }
 
+//Big component with lots of shet
 function PriceCalculator() {
+    //Look at all these states..
     const [categoryType, setCategoryType] = useState("");
     const [clothing, setClothing] = useState("");
     const [priceLevel, setpriceLevel] = useState("");
@@ -76,9 +81,15 @@ function PriceCalculator() {
     return (
         <div className="priceCalcWrapper">
             <form onSubmit={handleSubmit}>
-                <CategorySelecttion onCategoryChange={setCategoryType} />
+                <CategorySelecttion
+                    setCategory={setCategoryType}
+                    category={categoryType}
+                />
                 <div className="section clothingSection">
-                    <div className="sectionLabel">Klädesplagg: </div>
+                    <div className="sectionLabel">
+                        Klädesplagg:{" "}
+                        <span className="selectionLabel">{clothing}</span>
+                    </div>
                     <div className="selectionSection rowFlex">
                         <select
                             value={clothing}
@@ -86,12 +97,19 @@ function PriceCalculator() {
                         >
                             <ClothingList categoryType={categoryType} />
                         </select>
-                        <div className="selectionLabel">{clothing}</div>
                     </div>
                 </div>
-                <PriceValueSection onPriceLevelChange={setpriceLevel} />
+                <PriceValueSection
+                    setPriceLevel={setpriceLevel}
+                    priceLevel={priceLevel}
+                />
                 <div className="section">
-                    <div className="sectionLabel">Avdrag: </div>
+                    <div className="sectionLabel">
+                        Avdrag:{" "}
+                        <span className="selectionLabel">
+                            {discount ? `- ${discount} kr` : ""}
+                        </span>
+                    </div>
                     <div className="selectionSection rowFlex">
                         <select
                             value={discountReason}
