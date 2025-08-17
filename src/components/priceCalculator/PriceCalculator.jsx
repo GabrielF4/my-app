@@ -51,16 +51,14 @@ function ClothingList({ categoryType }) {
 
 //Big component with lots of shet
 function PriceCalculator() {
-    //Look at all these states..
     const [categoryType, setCategoryType] = useState("");
     const [clothing, setClothing] = useState("");
     const [priceLevel, setpriceLevel] = useState("");
     const [price, setPrice] = useState(0);
     const [addCost, setAddCost] = useState("");
 
-    //Event for when you click submit
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    //Update the final price automatically
+    useEffect(() => {
         const priceList = getPriceList(categoryType);
 
         let updatedPriceLevel = "";
@@ -73,12 +71,12 @@ function PriceCalculator() {
             setAddCost("");
         }
 
-        setPrice(getPrice(priceList, clothing, updatedPriceLevel) - discount);
-    };
+        setPrice(getPrice(priceList, clothing, updatedPriceLevel));
+    }, [categoryType, clothing, priceLevel]);
 
     return (
         <div className="priceCalcWrapper">
-            <form onSubmit={handleSubmit}>
+            <form>
                 <CategorySelecttion
                     setCategory={setCategoryType}
                     category={categoryType}
@@ -101,13 +99,11 @@ function PriceCalculator() {
                     setPriceLevel={setpriceLevel}
                     priceLevel={priceLevel}
                 />
-                <button type="submit" className="submitBtn">
-                    Submit
-                </button>
             </form>
             <div className="priceDisplay selectionLabel">
-                {price}
-                <span className="luxText">{addCost}</span> kr
+                {price ? price : "-"}
+                <span className="luxText">{addCost}</span>
+                {price ? " kr" : ""}
             </div>
         </div>
     );
