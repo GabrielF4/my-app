@@ -51,9 +51,9 @@ function ClothingList({ categoryType }) {
 
 //Big component with lots of shet
 function PriceCalculator() {
-    const [categoryType, setCategoryType] = useState("");
+    const [categoryType, setCategoryType] = useState("Dam");
     const [clothing, setClothing] = useState("");
-    const [priceLevel, setpriceLevel] = useState("");
+    const [priceLevel, setpriceLevel] = useState("low");
     const [price, setPrice] = useState(0);
     const [addCost, setAddCost] = useState("");
 

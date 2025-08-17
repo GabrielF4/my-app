@@ -4,7 +4,7 @@ import logo from "../assets/logo.png";
 
 function App() {
     return (
-        <>
+        <div className="page">
             <header>
                 <img
                     src={logo}
@@ -19,7 +19,7 @@ function App() {
                 Obs! This is a private project and isn't made by the red cross
                 brand.
             </footer>
-        </>
+        </div>
     );
 }
 

@@ -9,8 +9,8 @@ function CategorySelecttion({ setCategory, category }) {
                 Kategori: <span className="selectionLabel">{category}</span>
             </div>
             <div className="btnSection">
-                <Button onClick={() => setCategory("Herr")}>Herr</Button>
                 <Button onClick={() => setCategory("Dam")}>Dam</Button>
+                <Button onClick={() => setCategory("Herr")}>Herr</Button>
                 <Button onClick={() => setCategory("Barn")}>Barn</Button>
                 <Button onClick={() => setCategory("Sport")}>Sport</Button>
             </div>
