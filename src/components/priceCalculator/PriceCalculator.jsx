@@ -1,7 +1,12 @@
 import CategorySelecttion from "./CategorySelection.jsx";
 import PriceValueSection from "./PriceValueSection.jsx";
 import "./PriceCalculator.css";
-import { data_barn, data_dam, data_herr, data_sport } from "./price_lists.js";
+import {
+    data_barn,
+    data_dam,
+    data_herr,
+    data_sport,
+} from "../../utils/price_lists.js";
 import { useState } from "react";
 
 function getPriceList(categoryType) {

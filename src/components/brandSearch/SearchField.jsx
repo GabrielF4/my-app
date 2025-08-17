@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./searchField.css";
-import { brands } from "./data.js";
+import { brands } from "../../utils/data.js";
 
 const SearchField = () => {
     const [searchTerm, setSearchTerm] = useState("");
