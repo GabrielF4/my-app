@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./mainPage.css";
-import PriceCalculator from "./priceCalculator/PriceCalculator";
-import BrandSearch from "./brandSearch/BrandSearch";
+import PriceCalculator from "../components/priceCalculator/PriceCalculator";
+import BrandSearch from "../components/brandSearch/BrandSearch";
 
 function MainPage() {
     //State for active tab
