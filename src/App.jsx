@@ -2,6 +2,15 @@ import "./App.css";
 import MainPage from "./pages/MainPage";
 import logo from "./assets/logo.png";
 
+function getWeekNumber(d = new Date()) {
+    return Math.ceil(
+        ((d - new Date(d.getFullYear(), 0, 1)) / 86400000 +
+            new Date(d.getFullYear(), 0, 1).getDay() +
+            1) /
+            7
+    );
+}
+
 function App() {
     return (
         <div className="page">
@@ -11,6 +20,7 @@ function App() {
                     alt="Svenska Röda Korset Logotyp"
                     className="logo"
                 />
+                <div className="weekLabel">Vecka: {getWeekNumber()}</div>
             </header>
             <main>
                 <MainPage />

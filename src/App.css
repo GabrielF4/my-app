@@ -1,7 +1,8 @@
 header {
     background-color: white;
     display: flex;
-    flex-direction: column;
+    justify-content: "space-between";
+    align-items: "center";
 }
 
 .logo {
@@ -10,6 +11,14 @@ header {
     width: 12rem;
     height: auto;
     display: block;
+}
+
+.weekLabel {
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    font-weight: bold;
 }
 
 main {

@@ -53,7 +53,7 @@ function ClothingList({ categoryType }) {
 function PriceCalculator() {
     const [categoryType, setCategoryType] = useState("Dam");
     const [clothing, setClothing] = useState("");
-    const [priceLevel, setpriceLevel] = useState("low");
+    const [priceLevel, setpriceLevel] = useState("");
     const [price, setPrice] = useState(0);
     const [addCost, setAddCost] = useState("");
 
@@ -102,7 +102,7 @@ function PriceCalculator() {
             </form>
             <div className="priceDisplay selectionLabel">
                 {price ? price : "-"}
-                <span className="luxText">{addCost}</span>
+                <span className="luxText">{price ? addCost : ""}</span>
                 {price ? " kr" : ""}
             </div>
         </div>
