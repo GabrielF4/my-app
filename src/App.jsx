@@ -1,3 +1,4 @@
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import MainPage from "./pages/MainPage";
 import logo from "./assets/logo.png";
@@ -13,23 +14,25 @@ function getWeekNumber(d = new Date()) {
 
 function App() {
     return (
-        <div className="page">
-            <header>
-                <img
-                    src={logo}
-                    alt="Svenska Röda Korset Logotyp"
-                    className="logo"
-                />
-                <div className="weekLabel">Vecka: {getWeekNumber()}</div>
-            </header>
-            <main>
-                <MainPage />
-            </main>
-            <footer>
-                Obs! This is a private project and isn't made by the red cross
-                brand.
-            </footer>
-        </div>
+        <BrowserRouter>
+            <div className="page">
+                <header>
+                    <img
+                        src={logo}
+                        alt="Svenska Röda Korset Logotyp"
+                        className="logo"
+                    />
+                    <div className="weekLabel">Vecka: {getWeekNumber()}</div>
+                </header>
+                <main>
+                    <MainPage />
+                </main>
+                <footer>
+                    Obs! This is a private project and isn't made by the red
+                    cross brand.
+                </footer>
+            </div>
+        </BrowserRouter>
     );
 }
 
