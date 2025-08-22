@@ -28,24 +28,39 @@ function MainPage() {
 
     return (
         <>
-            <nav className="nav-bar">
-                {/*Brand-search tab*/}
-                <div
-                    className="tab"
-                    onClick={() => setActiveTab("brandSearch")}
-                >
-                    Märkessökning
+            <div className="mobile-load">
+                <nav className="nav-bar">
+                    {/*Brand-search tab*/}
+                    <div
+                        className="tab"
+                        onClick={() => setActiveTab("brandSearch")}
+                    >
+                        Märkessökning
+                    </div>
+                    {/*Price-calculation tab*/}
+                    <div
+                        className="tab"
+                        onClick={() => setActiveTab("priceCalc")}
+                    >
+                        Prissättning
+                    </div>
+                </nav>
+                <div className="appContainer">
+                    {
+                        //Depending on which tab is clicked the matching component is loaded
+                        renderTabContent()
+                    }
                 </div>
-                {/*Price-calculation tab*/}
-                <div className="tab" onClick={() => setActiveTab("priceCalc")}>
-                    Prissättning
+            </div>
+            <div className="desktop-load">
+                <div className="desktop-screen">
+                    <div className="brand-section">
+                        <BrandSearch />
+                    </div>
+                    <div className="calc-section">
+                        <PriceCalculator />
+                    </div>
                 </div>
-            </nav>
-            <div className="appContainer">
-                {
-                    //Depending on which tab is clicked the matching component is loaded
-                    renderTabContent()
-                }
             </div>
         </>
     );

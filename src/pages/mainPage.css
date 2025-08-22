@@ -1,3 +1,42 @@
+@import "../styles/variables.css";
+
+.mobile-load {
+    display: none;
+}
+
+.desktop-load {
+    display: none;
+}
+
+/* show desktop on larger screens */
+@media (min-width: 768px) {
+    .desktop-load {
+        display: block;
+    }
+}
+
+.desktop-screen {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.brand-section {
+    width: 50%;
+}
+
+.calc-section {
+    width: 50%;
+}
+
+/* show mobile on smaller screens */
+@media (max-width: 767px) {
+    .mobile-load {
+        display: block;
+    }
+}
+
 .appContainer {
     padding: 1rem;
     display: flex;
