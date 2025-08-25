@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./searchField.css";
 import { brands } from "../../utils/data.js";
 import { db } from "../../../firebase-config.js";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 
 const SearchField = () => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -55,7 +55,7 @@ const SearchField = () => {
             </button>
 
             <button className="addBrandBtn btn" onClick={sendSearchInputToDB}>
-                Lägg till märke
+                Klädmärke Saknas
             </button>
 
             <ul>

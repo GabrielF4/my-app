@@ -4,7 +4,6 @@ import MainPage from "./pages/MainPage";
 import logo from "./assets/logo.png";
 
 function getWeekNumber(d = new Date()) {
-    return 28;
     return Math.ceil(
         ((d - new Date(d.getFullYear(), 0, 1)) / 86400000 +
             new Date(d.getFullYear(), 0, 1).getDay() +
