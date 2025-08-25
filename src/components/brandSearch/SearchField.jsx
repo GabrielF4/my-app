@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./searchField.css";
 import { brands } from "../../utils/data.js";
+import { db } from "../../../firebase-config.js";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 const SearchField = () => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -11,6 +13,7 @@ const SearchField = () => {
         item.brand.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    //Perform a google search on the search input
     function searchGoogle() {
         window.open(
             `https://www.google.com/search?tbm=shop&q=${encodeURIComponent(
@@ -21,8 +24,20 @@ const SearchField = () => {
         );
     }
 
-    function addBrandToDB() {
-        console.log(searchTerm);
+    //Send the search input to the databse
+    async function sendSearchInputToDB() {
+        try {
+            const docRef = await addDoc(
+                collection(db, "clothing-brand-suggestions"),
+                {
+                    text: { searchTerm },
+                    createdAt: new Date(),
+                }
+            );
+            console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
     }
 
     return (
@@ -39,7 +54,7 @@ const SearchField = () => {
                 Sök <span className="google">Google</span>
             </button>
 
-            <button className="addBrandBtn btn" onClick={addBrandToDB}>
+            <button className="addBrandBtn btn" onClick={sendSearchInputToDB}>
                 Lägg till märke
             </button>
 
