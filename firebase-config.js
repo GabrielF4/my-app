@@ -9,7 +9,7 @@ import { getFirestore } from "firebase/firestore";
 const apiKey = import.meta.env.VITE_API_KEY_FIREBASE;
 
 const firebaseConfig = {
-    apiKey: apiKey,
+    apiKey: "AIzaSyC2my0o7JZ638BQtrW9yzXzqOlmoMbYm7w",
     authDomain: "red-cross-project-685bb.firebaseapp.com",
     projectId: "red-cross-project-685bb",
     storageBucket: "red-cross-project-685bb.firebasestorage.app",

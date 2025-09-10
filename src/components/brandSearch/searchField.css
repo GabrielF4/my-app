@@ -17,6 +17,14 @@
     background-color: rgb(146, 97, 97);
 }
 
+.addBrandBtn:active {
+    background-color: rgb(108, 72, 72);
+}
+
+.addBrandBtn:hover {
+    background-color: rgb(179, 122, 122);
+}
+
 .container {
     padding: "20px";
 }

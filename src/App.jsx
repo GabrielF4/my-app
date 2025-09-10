@@ -1,4 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
+import { AppProvider } from "./AppContext";
 import "./App.css";
 import MainPage from "./pages/MainPage";
 import logo from "./assets/logo.png";
@@ -35,31 +36,33 @@ function getWeekTextColor(week) {
 function App() {
     return (
         <BrowserRouter>
-            <div className="page">
-                <header>
-                    <img
-                        src={logo}
-                        alt="Svenska Röda Korset Logotyp"
-                        className="logo"
-                    />
-                    <div
-                        className="weekLabel"
-                        style={{
-                            backgroundColor: getWeekColor(getWeekNumber()),
-                            color: getWeekTextColor(getWeekNumber()),
-                        }}
-                    >
-                        Vecka: {getWeekNumber()}
-                    </div>
-                </header>
-                <main>
-                    <MainPage />
-                </main>
-                <footer>
-                    Obs! This is a private project and isn't made by the red
-                    cross brand.
-                </footer>
-            </div>
+            <AppProvider>
+                <div className="page">
+                    <header>
+                        <img
+                            src={logo}
+                            alt="Svenska Röda Korset Logotyp"
+                            className="logo"
+                        />
+                        <div
+                            className="weekLabel"
+                            style={{
+                                backgroundColor: getWeekColor(getWeekNumber()),
+                                color: getWeekTextColor(getWeekNumber()),
+                            }}
+                        >
+                            Vecka: {getWeekNumber()}
+                        </div>
+                    </header>
+                    <main>
+                        <MainPage />
+                    </main>
+                    <footer>
+                        Obs! This is a private project and isn't made by the red
+                        cross brand.
+                    </footer>
+                </div>
+            </AppProvider>
         </BrowserRouter>
     );
 }

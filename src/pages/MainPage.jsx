@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useAppContext } from "../AppContext";
 import "./mainPage.css";
 import PriceCalculator from "../components/priceCalculator/PriceCalculator";
 import BrandSearch from "../components/brandSearch/BrandSearch";
@@ -26,8 +27,14 @@ function MainPage() {
         }
     };
 
+    //Get show notification context
+    const { showNoti, brandRequest } = useAppContext();
+
     return (
         <>
+            <div className={`notification ${showNoti ? " show" : ""}`}>
+                {brandRequest} lades till som förslag på nytt klädmärke!
+            </div>
             <div className="mobile-load">
                 <nav className="nav-bar">
                     {/*Brand-search tab*/}
@@ -44,9 +51,6 @@ function MainPage() {
                     >
                         Prissättning
                     </div>
-                    <div className="tab" onClick={() => console.log("Admin")}>
-                        Admin
-                    </div>
                 </nav>
                 <div className="appContainer">
                     {
@@ -56,19 +60,6 @@ function MainPage() {
                 </div>
             </div>
             <div className="desktop-load">
-                <nav className="nav-bar">
-                    {/*Prissättning tab*/}
-                    <div
-                        className="tab"
-                        onClick={() => console.log("Prissättning")}
-                    >
-                        Prissätting
-                    </div>
-                    {/*Admin tab*/}
-                    <div className="tab" onClick={() => console.log("Admin")}>
-                        Admin
-                    </div>
-                </nav>
                 <div className="desktop-screen">
                     <div className="brand-section">
                         <BrandSearch />
